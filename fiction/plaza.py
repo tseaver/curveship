@@ -8,7 +8,7 @@ __license__ = 'ISC'
 __version__ = '0.5.0.0'
 __status__ = 'Development'
 
-from item_model import Room, Thing
+from curveship.item_model import Room, Thing
 
 items = [
 

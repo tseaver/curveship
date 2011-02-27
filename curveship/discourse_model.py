@@ -10,7 +10,7 @@ import math
 import re
 import types
 
-import input_model
+import curveship.input_model
 
 class SpecialTime(object):
     'Adapted from extremes.py, based on PEP 326.'
@@ -246,7 +246,7 @@ class Discourse(object):
     debug = False
 
     def __init__(self, discourse):
-        self.input_list = input_model.InputList()
+        self.input_list = curveship.input_model.InputList()
         self.narrated = {}
         self.spin = discourse['spin']
         self.initial_spin = discourse['spin']

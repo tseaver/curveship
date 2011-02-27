@@ -9,8 +9,8 @@ __status__ = 'Development'
 import copy
 import operator
 
-import can
-import item_model
+from curveship import can
+from curveship import item_model
 
 def check_for_reserved_tags(items):
     'Raise an error if a reserved tag, such as @cosmos, is in the list.'

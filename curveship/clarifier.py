@@ -8,8 +8,8 @@ __status__ = 'Development'
 
 import re
 
-import preparer
-import presenter
+import curveship.preparer
+import curveship.presenter
 
 def english_command(tokens, concept, discourse):
     """Converts a command to English.
@@ -52,8 +52,8 @@ def clarify(user_input, concept, discourse, in_stream, out_streams):
         options.append('(' + str(len(commands) + 1) + ') none of these')
         question += discourse.list_phrases(options, conjunction='or') + '?)'
         question = re.sub('",', ',"', question)
-        presenter.present(question, out_streams)
-        choose_a_number = preparer.prepare(discourse.separator,
+        curveship.presenter.present(question, out_streams)
+        choose_a_number = curveship.preparer.prepare(discourse.separator,
                           '(1-' + str(len(commands) + 1) + ')? ', in_stream)
         selected = None
         if len(choose_a_number.tokens) == 1:
@@ -72,6 +72,6 @@ def clarify(user_input, concept, discourse, in_stream, out_streams):
             user_input.category = 'command'
             user_input.normal = user_input.possible[selected-1]
 
-    presenter.present(clarification, out_streams)
+    curveship.presenter.present(clarification, out_streams)
     return user_input
 

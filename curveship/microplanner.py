@@ -10,8 +10,8 @@ import random
 import re
 import types
 
-import reply_planner
-from realizer import Section, Paragraph, Heading
+from curveship import reply_planner
+from curveship.realizer import Section, Paragraph, Heading
 
 def has_final(node):
     final = False

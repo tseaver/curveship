@@ -6,7 +6,7 @@ __license__ = 'ISC'
 __version__ = '0.5.0.0'
 __status__ = 'Development'
 
-from action_model import Behave, Configure, Modify, Sense
+from curveship.action_model import Behave, Configure, Modify, Sense
 
 def check_for_metonymy(tag, concept):
     if hasattr(concept.item[concept.item[tag].parent], 'vessel'):

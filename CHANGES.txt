@@ -1,0 +1,7 @@
+``curveship`` Changelog
+=======================
+
+0.1 (unreleased)
+----------------
+
+- Packaged as a setuptools- / distutils-installable source distribution.

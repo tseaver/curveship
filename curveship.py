@@ -12,16 +12,16 @@ import os
 import time
 import optparse
 
-import clarifier
-import command_map
-import discourse_model
-import joker
-import microplanner
-import preparer
-import presenter
-import recognizer
-import reply_planner
-import world_model
+from curveship import clarifier
+from curveship import command_map
+from curveship import discourse_model
+from curveship import joker
+from curveship import microplanner
+from curveship import preparer
+from curveship import presenter
+from curveship import recognizer
+from curveship import reply_planner
+from curveship import world_model
 
 class Multistream(object):
     'Encapsultes multiple output streams.'

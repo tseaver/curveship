@@ -8,7 +8,8 @@ __status__ = 'Development'
 
 import re
 import types
-import irregular_verb
+
+from curveship import irregular_verb
 
 def apply_filter_list(filter_list, string):
     'Transforms the string by applying all filters in the list.'

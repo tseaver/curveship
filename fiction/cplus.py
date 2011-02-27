@@ -9,9 +9,9 @@ __license__ = 'ISC'
 __version__ = '0.5.0.0'
 __status__ = 'Development'
 
-from item_model import Actor, Thing, Room, Substance
-from action_model import Modify, Sense
-import can
+from curveship.item_model import Actor, Thing, Room, Substance
+from curveship.action_model import Modify, Sense
+from curveship import can
 
 import fiction.cloak
 

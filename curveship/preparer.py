@@ -13,7 +13,7 @@ try:
 except ImportError:
     pass
 
-import input_model
+from curveship import input_model
 
 def prepare(separator, prompt='', in_stream=sys.stdin, out_stream=sys.stdout):
     """Read a string from the input string and return it tokenized.

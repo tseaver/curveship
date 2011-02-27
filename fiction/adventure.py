@@ -8,11 +8,12 @@ __status__ = 'Development'
 
 from random import random, randint, choice
 
-from item_model import Actor, Door, Room, SharedThing, Substance, Thing
-from action_model import Behave, Configure, Modify, Sense
-from joker import update_spin
-import can
-import when
+from curveship.item_model import Actor, Door, Room, SharedThing, Substance
+from curveship.item_model import Thing
+from curveship.action_model import Behave, Configure, Modify, Sense
+from curveship.joker import update_spin
+from curveship import can
+from curveship import when
 
 discourse = {
 
