@@ -17,7 +17,7 @@ from curveship.item_model import Actor, Thing
 from curveship.action_model import Behave, Sense
 from curveship import can
 
-import fiction.plaza
+from curveship_lost_one import plaza
 
 discourse = {
     'metadata': {
@@ -213,7 +213,7 @@ class Kicker(Actor):
         return []
 
 
-items = fiction.plaza.items + [
+items = plaza.items + [
 
     Wanderer('@visitor in @plaza_center',
         article='the',
