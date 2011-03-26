@@ -13,15 +13,15 @@ from curveship.item_model import Actor, Thing, Room, Substance
 from curveship.action_model import Modify, Sense
 from curveship import can
 
-import fiction.cloak
+from curveship_cloak import cloak
 
-discourse = fiction.cloak.discourse
+discourse = cloak.discourse
 discourse['metadata']['title'] = 'Cloak of Darkness Plus'
 discourse['metadata']['people'] = [
     ('augmented and implemented in Curveship by', 'Nick Montfort'),
     ('original game by', 'Roger Firth')]
 
-initial_actions = fiction.cloak.initial_actions
+initial_actions = cloak.initial_actions
 
 
 class Lamp(Thing):
@@ -60,7 +60,7 @@ class Waver(Actor):
         return actions
 
 
-items = fiction.cloak.items + [
+items = cloak.items + [
 
     Substance('@water',
         called='water',
