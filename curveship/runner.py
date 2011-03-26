@@ -226,10 +226,8 @@ def parse_command_line(argv):
     return opts, args
 
 
-def main(argv=None, in_stream=sys.stdin, out_stream=sys.stdout):
+def main(argv=sys.argv, in_stream=sys.stdin, out_stream=sys.stdout):
     "Set up a session and run Curveship's main loop."
-    if argv is None:
-        argv = sys.argv
     return_code = 0
     try:
         out_streams = Multistream([out_stream])
