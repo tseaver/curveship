@@ -1,11 +1,10 @@
-#!/usr/bin/env python
-'An interactive fiction system offering control over the narrative discourse.'
 
 __author__ = 'Nick Montfort'
 __copyright__ = 'Copyright 2011 Nick Montfort'
 __license__ = 'ISC'
 __version__ = '0.5.0.0'
 __status__ = 'Development'
+
 
 import sys
 import os
@@ -227,8 +226,10 @@ def parse_command_line(argv):
     return opts, args
 
 
-def main(argv, in_stream=sys.stdin, out_stream=sys.stdout):
+def main(argv=None, in_stream=sys.stdin, out_stream=sys.stdout):
     "Set up a session and run Curveship's main loop."
+    if argv is None:
+        argv = sys.argv
     return_code = 0
     try:
         out_streams = Multistream([out_stream])
@@ -265,8 +266,4 @@ def main(argv, in_stream=sys.stdin, out_stream=sys.stdout):
         in_stream.close()
         out_streams.close()
     return return_code
-
-
-if __name__ == '__main__':
-    sys.exit(main(sys.argv))
 
