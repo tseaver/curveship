@@ -1,5 +1,15 @@
 import os
-from distutils.core import setup
+try:
+    from setuptools import setup
+except ImportError:
+    from distutils.core import setup
+    extra_args = {'scripts': ['scripts/narrate.py']}
+else:
+    extra_args = {'entry_points':
+                    {'console_scripts':
+                      ['narrate = curveship.runner:main'],
+                    },
+                 }
 
 here = os.path.abspath(os.path.dirname(__file__))
 README = open(os.path.join(here, 'README.txt')).read()
@@ -24,12 +34,15 @@ shared_metadata = {
      'license': "ISCL",
 }
 
+main_extra = {}
+main_extra.update(shared_metadata)
+main_extra.update(extra_args)
+
 setup(name='curveship',
       description='Interactive Narrating for Interactive Fiction',
       long_description=README + "\n\n" + CHANGES,
       packages=['curveship'],
-      scripts=['curveship.py'],
-      **shared_metadata
+      **main_extra
       )
 
 #------------------------------------------------------------------------------
