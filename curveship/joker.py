@@ -130,16 +130,19 @@ def load_file(file_name, required, defaults, module_type):
     """Loads either an interactive fiction or a spin file.
 
     Improved filename parsing thanks to Max Battcher."""
-    dirname, _ = os.path.splitext(file_name)
-    pieces = []
-    while dirname:
-        dirname, basename = os.path.split(dirname)
-        if basename:
-            pieces.append(basename)
-        else:
-            break
-    pieces.reverse()
-    module_name = '.'.join(pieces)
+    if os.path.exists(file_name):
+        dirname, _ = os.path.splitext(file_name)
+        pieces = []
+        while dirname:
+            dirname, basename = os.path.split(dirname)
+            if basename:
+                pieces.append(basename)
+            else:
+                break
+        pieces.reverse()
+        module_name = '.'.join(pieces)
+    else: # assume it is a module name
+        module_name = file_name
     try:
         mod = __import__(module_name, globals(), locals(), required, -1)
         for attr in required:
